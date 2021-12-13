@@ -13,6 +13,10 @@ module.exports = {
         // TypeScript をコンパイルする
         use: "ts-loader",
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   // ファイルの出力設定

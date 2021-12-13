@@ -1,5 +1,6 @@
 import React from 'react';
 import { Task } from '../'
+import '../styles/taskList.css'
 
 type Props = {
   tasks: Task[];
@@ -18,11 +19,12 @@ export const TaskList: React.VFC<Props> = ({ tasks, setTasks }) => {
     setTasks(newTask);
   };
   return (
-    <ul>
+    <ul className='task-list'>
       {tasks.map((task, index) => (
-        <li key={`todo-${index}`}>
+        <li key={`todo-${index}`} className='task-items'>
           {task.isDone ? <s>{task.label}</s> : task.label}
           <input 
+            className='task-input'
             onChange={(e) => handleCheckBox(e, index)}
             type="checkbox"
             checked={task.isDone}

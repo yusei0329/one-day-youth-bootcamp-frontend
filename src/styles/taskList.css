@@ -1,0 +1,9 @@
+.task-list {
+  padding-bottom: 30px;
+  list-style: none;
+}
+
+.task-items {
+  padding: 10px;
+  font-size: 1.5em;
+}

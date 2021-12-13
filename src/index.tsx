@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { request } from "./server";
 import { TaskList } from './components/TaskList';
 import { TaskForm } from './components/TaskForm';
+import "./styles/index.css";
 
 // TODOタスクの型
 export type Task = { label: string; isDone: boolean};
@@ -18,15 +19,16 @@ const App: React.VFC = () => {
   }, []);
 
   return (
-    <div style={{ width: '700px', margin: '0 auto'}}>
+    <div className="wrap">
       {/* ヘッダー */}
       <h1>Tutorial Works</h1>
       <h2>React Todo List</h2>
       {/* 一覧表示 */}
       <TaskList {...{ tasks, setTasks }}/>
-      
+
       {/* タスク追加、削除 */}
       <TaskForm {...{ tasks, setTasks, newTaskLabel, setNewTaskLabel }}/>
+
     </div>
   );
 };
